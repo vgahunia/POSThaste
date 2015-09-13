@@ -1,6 +1,7 @@
 body {
-	background-color: white;
+	background-color: black;
 	width: 100%;
+	font-family: 'Dosis', sans-serif;
 }
 
 #body {
@@ -9,7 +10,6 @@ body {
 	width: 600px;
 	height: 800px;
 	margin: 0 auto;
-	font-family: 'Dosis', sans-serif;
 }
 
 .box {
@@ -45,13 +45,13 @@ input {
 label {
     color: rgb(240, 120, 30);
     font-size: 1em;
-    padding-right: 0;
 }
 
 .feed {
 	padding: 0px;
 	margin: 0px;
 	font-size: 1em;
+	color: black;
 }
 
 .box h1 {

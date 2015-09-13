@@ -1,19 +1,33 @@
-<h1>Welcome!</h1>
-<br>
-<form method="POST" action="/submit_user"> 
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
 
-	<label for="username">User Name</label>   
-	<input type="text" name="[user]username" placeholder="Username">
-	<br>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="signin.js"></script>
 
-	<label for="email">email</label>   
-	<input type="text" name="[user]email" placeholder="email"> 
-	<br>
+	<link rel="stylesheet" href="style.css">
+</head>
 
-	<label for="password">Password</label>   
-	<input type="password" name="[user]password" placeholder="password"> 
-	<br>
+<div id="body">
+	<div class="box">
 
-	<input type="submit"> 
+		<h1>Welcome!</h1>
+		<br>
+		<form method="POST" action="/submit_user"> 
 
-</form>
+			<label for="username">Username</label>   
+			<input type="text" name="[user]username" placeholder="Username">
+			<br>
+
+			<label for="email">Email</label>   
+			<input type="text" name="[user]email" placeholder="email"> 
+			<br>
+
+			<label for="password">Password</label>   
+			<input type="password" name="[user]password" placeholder="password"> 
+			<br>
+
+			<input type="submit" class="submit"> 
+		</form>
+
+	</div>
+</div>
