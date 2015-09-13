@@ -66,6 +66,10 @@ label {
 	border-bottom: 1px solid black;
 }
 
+.box h3 {
+	color: rgb(240, 120, 30);
+}
+
 .submit {
 	margin-top: 0;
 	padding-top: 4px;
