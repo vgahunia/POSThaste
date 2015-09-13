@@ -43,8 +43,7 @@ post '/sign-in' do
 	@user = User.where(username: params[:username]).first
 	if @user
 		erb :post
-	else
-		flash[:alert] = "Please provide correct username."     
+	else   
 		redirect '/'
 	end
 	if @user.password == params[:password]

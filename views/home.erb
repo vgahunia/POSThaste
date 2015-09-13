@@ -8,25 +8,29 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 
-<div class="box">
+<div id="body">
+	<div class="box">
 
-	<h1>SIGN IN</h1>
-	<br>
-	<form method="POST" action="/sign-in" id="form"> 
-		<label for="username">Username</label>   
-		<input type="text" name="username" id="username">
-		<div class="feed" id="u-feedback"></div>
-		<%= flash[:alert] %>
+		<h1>SIGN IN</h1>
 		<br>
-		<label for="password">Password</label>   
-		<input type="password" name="password" id="password">
-		<div class="feed" id="feedback"></div>
-		<%= flash[:alert] %> 
+		<form method="POST" action="/sign-in" id="form">
+			<div class="feed">
+				<%= flash[:alert] %>
+			</div> 
+			<label for="username">Username</label>   
+			<input type="text" name="username" id="username">
+			<br>
+			<label for="password">Password</label>   
+			<input type="password" name="password" id="password">
+			<br>
+			<br>
+			<input type="submit" class="submit"> 
+		</form>
 		<br>
-		<input type="submit"> 
-	</form>
-	<br>
-	<p>OR</p>
-	<a href='/signup'>SIGN UP</a>
+		<h2>OR</h2>
+		<a href='/signup'>
+			<h1>SIGN UP</h1>
+		</a>
 
+	</div>
 </div>
