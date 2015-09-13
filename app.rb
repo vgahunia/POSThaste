@@ -25,6 +25,7 @@ post '/submit_user' do
 	puts params.inspect
 	user_info = params[:user]
 	User.create(user_info)
+	current_user
 	erb :post
 end
 
@@ -34,6 +35,7 @@ end
 
 get '/post' do
 	erb :post
+	current_user
 end
 
 post '/sign-in' do     
@@ -46,4 +48,17 @@ post '/sign-in' do
 		flash[:alert] = "Please try again."     
 		redirect '/login-failed'   
 	end    
+end
+
+post '/submit_post' do
+	@info = params[:post]
+	current_post = Post.create(@info)
+	current_post.user = current_user.id
+	current_post.save
+end
+
+def current_user     
+	if session[:user_id]       
+		@current_user = User.find(session[:user_id])     
+	end   
 end
