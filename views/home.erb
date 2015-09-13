@@ -1,20 +1,32 @@
-<h1>SIGN IN</h1>
-<br>
-<form method="POST" action="/sign-in"> 
 
-	<label for="username">email</label>   
-	<input type="text" name="username"> 
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="signin.js"></script>
+
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<div class="box">
+
+	<h1>SIGN IN</h1>
 	<br>
-
-	<label for="password">Password</label>   
-	<input type="password" name="password"> 
+	<form method="POST" action="/sign-in" id="form"> 
+		<label for="username">Username</label>   
+		<input type="text" name="username" id="username">
+		<div class="feed" id="u-feedback"></div>
+		<%= flash[:alert] %>
+		<br>
+		<label for="password">Password</label>   
+		<input type="password" name="password" id="password">
+		<div class="feed" id="feedback"></div>
+		<%= flash[:alert] %> 
+		<br>
+		<input type="submit"> 
+	</form>
 	<br>
+	<p>OR</p>
+	<a href='/signup'>SIGN UP</a>
 
-	<input type="submit"> 
-
-</form>
-<br>
-
-<p>OR</p>
-
-<a href='/signup'>SIGN UP</a>
+</div>

@@ -1,0 +1,64 @@
+
+body {
+	background-color: rgb(210, 210, 200);
+	width: 960px;
+	margin: 0 auto;
+	font-family: 'Dosis', sans-serif;
+}
+
+#form {
+	width: 500px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+form {
+	width: 500px;
+}
+
+label, input {
+		display: inline-block;
+    vertical-align: baseline;
+    width: 125px;
+}
+
+input {
+	border-radius: 25px;
+}
+
+label {
+    color: rgb(200, 200, 200);
+    font-size: 1.1em;
+}
+
+.feed {
+	padding: 10px;
+	font-size: 1em;
+}
+
+.background {
+	background-color: rgb(200, 200, 200);
+}
+
+.col {
+	float: left;
+}
+
+#form {
+	border: 5px solid black;
+	margin-top: 40px;
+	padding: 20px;
+	color: white;
+	background-color: rgb(45, 67, 87);
+	border-radius: 25px;
+}
+
+#field {
+	margin-top: 40px;
+	padding: 40px;
+}
+
+#field h1 {
+	font-size: 5em;
+}
+

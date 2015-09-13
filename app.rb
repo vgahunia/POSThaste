@@ -41,12 +41,17 @@ end
 post '/sign-in' do     
 	puts "my params are" + params.inspect
 	@user = User.where(username: params[:username]).first
-	puts @user.inspect
+	if @user
+		erb :post
+	else
+		flash[:alert] = "Please provide correct username."     
+		redirect '/'
+	end
 	if @user.password == params[:password]
 		erb :post
 	else
 		flash[:alert] = "Please try again."     
-		redirect '/login-failed'   
+		redirect '/'   
 	end    
 end
 
