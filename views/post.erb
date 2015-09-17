@@ -1,16 +1,34 @@
-<h1>Post Page</h1>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
 
-<form method="POST" action="/submit_post"> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="signin.js"></script>
 
-	<label for="title">Title</label>   
-	<input type="text" name="[post]title" placeholder="Title of your post">
-	<br>
+	<link rel="stylesheet" href="style.css">
+</head>
 
-	<label for="email">Text</label>   
-	<input type="text" name="[post]text" placeholder="write something" maxlength="150"> 
- 
-	<br>
 
-	<input type="submit"> 
+<div id="body">
+	<a href="sign-out">Sign Out</a>
+	<a href="delete">Delete your Account</a>
+	<a href="profile">See your Profile</a>
+	<a href="userlist">Member List</a>
+	<div class="box">
+		<h1>
+			Welcome, <%=@user.username if @user %>
+		</h1>
 
-</form>
+		<h3>Create a new post</h3>
+		<%= flash[:alert] %>
+		<form method="POST" action="/submit_post" id="postform">
+		 	<input type="hidden" name="[post]user_id" value="<%=current_user.id %>">
+			<input class="post" type="text" name="[post]title" placeholder="Title of your post">
+			<br>
+			<textarea class="post" type="text" name="[post]post" maxlength="150" placeholder="write something" cola="4" rows="10"></textarea>
+			<br>
+			<input type="submit"> 
+		</form>
+	</div>
+</div>
+
+

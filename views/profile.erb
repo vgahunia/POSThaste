@@ -1,0 +1,28 @@
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="signin.js"></script>
+
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<div id="body">
+	<a href="sign-out">Sign Out</a>
+	<a href="delete">Delete your Account</a>
+	<div class="box">
+
+		<h1>Your recent posts</h1>
+		<h3> <%= @user.username %> </h3>
+
+		<h3> <%= @user.id %> </h3>
+
+		<% @current.each do |post| %>
+		<h2>
+			<%= post.post %>
+		</h2>
+		<br>
+		<% end %>
+
+	</div>
+</div>

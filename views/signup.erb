@@ -9,16 +9,18 @@
 
 <div id="body">
 	<div class="box">
-
+		<a href="sign-in">back</a>
 		<h3>Won't take but a few thousands of milliseconds...</h3>
-		<form method="POST" action="/submit_user"> 
+		<form method="POST" action="/submit_user">
+			
+			<div class="feed">
+				<%= flash[:alert] %>
+			</div>  
   
 			<input type="text" name="[user]username" placeholder="Username">
 			<br>
-  
 			<input type="text" name="[user]email" placeholder="email"> 
 			<br>
- 
 			<input type="password" name="[user]password" placeholder="password"> 
 			<br>
 			<h3>See.</h3>

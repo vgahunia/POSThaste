@@ -12,10 +12,38 @@ enable :sessions
 use Rack::Flash, :sweep => true
 set :sessions, true
 
+#---------- METHODS ------------
+
+def current_user     
+	if session[:user_id]       
+		@current_user = User.find(session[:user_id])    
+	end   
+end
+
+#---------- SIGN IN -------------
+
 get '/' do
 	puts "Loading up the home page and sign in"
 	erb :home
 end
+
+get "/sign-in" do
+	erb :home
+end
+
+post '/sign-in' do     
+	puts "my params are" + params.inspect
+	@user = User.where(username: params[:username]).first
+	if @user && (@user.password == params[:password])
+		session[:user_id] = @user.id
+		erb :post
+	else
+		flash[:alert] = "Please try again."   
+		redirect '/'
+	end  
+end
+
+#------------- SIGN UP --------------
 
 get '/signup' do
 	erb :signup
@@ -24,45 +52,53 @@ end
 post '/submit_user' do
 	puts params.inspect
 	user_info = params[:user]
-	User.create(user_info)
-	current_user
+	@user = User.create(user_info)
+	if @user
+		session[:user_id] = @user.id
+	end
 	erb :post
 end
 
-get '/login-failed' do
-	erb :fail
+#------------- SIGN OUT --------------
+
+get '/sign-out' do
+	session[:user_id] = nil
+	erb :home
 end
+
+#-------------- POST ----------------
 
 get '/post' do
-	erb :post
 	current_user
-end
-
-post '/sign-in' do     
-	puts "my params are" + params.inspect
-	@user = User.where(username: params[:username]).first
-	if @user
-		erb :post
-	else   
-		redirect '/'
-	end
-	if @user.password == params[:password]
-		erb :post
-	else
-		flash[:alert] = "Please try again."     
-		redirect '/'   
-	end    
 end
 
 post '/submit_post' do
-	@info = params[:post]
-	current_post = Post.create(@info)
-	current_post.user = current_user.id
-	current_post.save
+	puts "my params are" + params.inspect
+	info = params[:post]
+	if params[:post][:title] && params[:post][:post]
+		Post.create(info)
+		redirect '/profile'
+	else
+		flash[:alert] = "Please try again."   
+		redirect '/post'
+	end
 end
 
-def current_user     
-	if session[:user_id]       
-		@current_user = User.find(session[:user_id])     
-	end   
+#-------------PROFILE -----------------
+
+get '/profile' do
+	@user = current_user
+	params.inspect
+	@posts = Post.all
+	@current = @user.posts
+	erb :profile
 end
+
+#------------ DELETE ---------------
+
+get '/delete' do
+	@user = current_user
+	@user.destroy
+	erb :home
+end
+
