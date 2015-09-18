@@ -69,7 +69,8 @@ end
 #-------------- POST ----------------
 
 get '/post' do
-	current_user
+	@user = current_user
+	erb :post
 end
 
 post '/submit_post' do
@@ -101,4 +102,13 @@ get '/delete' do
 	@user.destroy
 	erb :home
 end
+
+#------------ USER LIST -----------
+
+get '/userlist' do
+	@user = current_user
+	@users = User.all
+	erb :userlist
+end
+
 

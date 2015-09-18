@@ -1,0 +1,27 @@
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="signin.js"></script>
+
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<div id="body">
+	<a href="sign-out">Sign Out</a>
+	<a href="delete">Delete your Account</a>
+	<a href="profile">See your Profile</a>
+	<a href="post">Write a Post</a>
+	<div class="box">
+
+		<h1>List of all Members </h1>
+
+		<% @users.each do |user| %>
+		<h2>
+			<%= user.username %>
+		</h2>
+		<br>
+		<% end %>
+
+	</div>
+</div>
