@@ -9,12 +9,22 @@
 
 
 <div id="body">
-	<div class="menu">
-		<a href="sign-out">Sign Out</a>
-		<a href="delete">Delete your Account</a>
-		<a href="profile">See your Profile</a>
-		<a href="userlist">Member List</a>
+
+	<div id="nav">
+		<div class="menu-left menu">
+			<ul>
+				<li class="top"><a href="sign-out">Sign Out</a></li>
+				<li><a href="delete">Close Account</a></li>
+			</ul>
+		</div>
+		<div class="menu-right menu">
+			<ul>
+				<li class="top"><a href="profile">My Profile</a></li>
+				<li><a href="userlist">Member List</a></li>
+			</ul>
+		</div>
 	</div>
+
 	<div class="box">
 		<h1>
 			Welcome, <%=@user.username if @user %>
