@@ -30,9 +30,13 @@
 		<h1>List of all Members </h1>
 
 		<% @users.each do |user| %>
-		<h2>
+		<h3>
 			<%= user.username %>
-		</h2>
+			<% id = user.id %>
+		</h3>
+			<a href= <%= "friend/?friend_id=#{id}" %> >Start Friendship</a>
+			<br>
+			<a href="#">See <%= user.username %>'s page</a>
 		<br>
 		<% end %>
 

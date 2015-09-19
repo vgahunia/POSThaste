@@ -8,7 +8,7 @@
 </head>
 
 <div id="body">
-	
+
 	<div id="nav">
 		<div class="menu-left menu">
 			<ul>
@@ -24,11 +24,10 @@
 		</div>
 	</div>
 
-	<div class="box">
-
+	<div class="box" id="post-box">
+		<a href="edit">Edit your Profile</a>
 		<h1>Your recent posts</h1>
 		<h3> <%= @user.username %> </h3>
-
 		<h3> <%= @user.id %> </h3>
 
 		<% @current.each do |post| %>
@@ -37,6 +36,6 @@
 		</h2>
 		<br>
 		<% end %>
-
 	</div>
+
 </div>

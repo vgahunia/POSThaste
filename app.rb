@@ -108,7 +108,23 @@ end
 get '/userlist' do
 	@user = current_user
 	@users = User.all
+
+	puts @user.friends.inspect
 	erb :userlist
+end
+
+get '/friend/' do
+	@user = current_user
+	puts "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+	puts params[:friend_id]
+	@user.friends << User.find(params[:friend_id])
+
+	puts @user.friends.inspect
+
+	puts "^^^^^^^^^^^^^^^^^^^^HHH^^^^^^^^^^"
+
+		puts @user.friendships.inspect
+
 end
 
 
