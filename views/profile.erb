@@ -18,24 +18,43 @@
 		</div>
 		<div class="menu-right menu">
 			<ul>
-				<li class="top"><a href="profile">My Profile</a></li>
+				<li class="top"><a href="userlist">Member List</a></li>
 				<li><a href="post">Write a Post</a></li>
 			</ul>
 		</div>
 	</div>
 
-	<div class="box" id="post-box">
-		<a href="edit">Edit your Profile</a>
-		<h1>Your recent posts</h1>
-		<h3> <%= @user.username %> </h3>
-		<h3> <%= @user.id %> </h3>
+	<div class="box_full">
 
-		<% @current.each do |post| %>
-		<h2>
-			<%= post.post %>
-		</h2>
-		<br>
-		<% end %>
+		<div class="box" id="post-box">
+			<a href="edit">Edit your Profile</a>
+			<h1>Your Account Information</h1>
+			<h3> <%= @user.username %> </h3>
+			<h3> <%= @user.id %> </h3>
+		</div>
+
+		<div class="box" id="post-box">
+			<h1>Your recent posts</h1>
+
+			<% @current.each do |post| %>
+			<h2>
+				<%= post.post %>
+			</h2>
+			<br>
+			<% end %>
+		</div>
+
+		<div class="box" id="post-box">
+			<h1>Your Friends</h1>
+
+			<% @friends.each do |friend| %>
+			<h2>
+				<%= friend.username %>
+			</h2>
+			<br>
+			<% end %>
+		</div>
+
 	</div>
 
 </div>

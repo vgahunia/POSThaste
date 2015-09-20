@@ -28,17 +28,12 @@
 
 	<div class="box box_full">
 		<%= flash[:alert] %>
-		<h1>List of all Members </h1>
-
-		<% @users.each do |user| %>
-		<h3>
-			<%= user.username %>
-			<% id = user.id %>
-		</h3>
-			<a href= <%= "friend/?friend_id=#{id}" %> >Start Friendship</a>
+		<h1>Recent Feed</h1>
+		<% @posts.each do |recent_post| %>
+			<h2>
+				<%= recent_post.post %>
+			</h2>
 			<br>
-			<a href="/profile/?friend_id=#{id}">See <%= user.username %>'s page</a>
-		<br>
 		<% end %>
 
 	</div>

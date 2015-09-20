@@ -16,7 +16,7 @@
 $(document).ready(function() {
 
   function setHeight() {
-    boxHeight = $('.box').height();
+    boxHeight = $('.box_full').height();
     bodyHeight = $('#body').height();
     $('#body').css('min-height', boxHeight + 200);
   };

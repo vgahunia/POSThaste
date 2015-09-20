@@ -92,6 +92,7 @@ get '/profile' do
 	params.inspect
 	@posts = Post.all
 	@current = @user.posts
+	@friends = @user.friends
 	erb :profile
 end
 
@@ -123,8 +124,17 @@ get '/friend/' do
 
 	puts "^^^^^^^^^^^^^^^^^^^^HHH^^^^^^^^^^"
 
-		puts @user.friendships.inspect
+	puts @user.friendships.inspect
+	flash[:notice] = "You've add a new friend."
+	redirect '/userlist'
 
+end
+
+#------------- FEED ---------------
+
+get '/feed' do
+	@posts = Post.all
+	erb :feed
 end
 
 
