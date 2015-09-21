@@ -33,6 +33,7 @@
 		<% @users.each do |user| %>
 		<h3>
 			<%= user.username %>
+			<%= user.id %>
 			<% id = user.id %>
 		</h3>
 			<a href= <%= "friend/?friend_id=#{id}" %> >Start Friendship</a>

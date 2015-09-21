@@ -133,7 +133,8 @@ end
 #------------- FEED ---------------
 
 get '/feed' do
-	@posts = Post.all
+	@posts = Post.all.reverse
+	@users = User.all
 	erb :feed
 end
 
