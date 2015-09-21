@@ -38,7 +38,7 @@
 		</h3>
 			<a href= <%= "friend/?friend_id=#{id}" %> >Start Friendship</a>
 			<br>
-			<a href="/profile/?friend_id=#{id}">See <%= user.username %>'s page</a>
+			<a href=<%= "friend_profile/?friend_id=#{id}" %>> See <%= user.username %>'s page</a>
 		<br>
 		<% end %>
 

@@ -96,6 +96,18 @@ get '/profile' do
 	erb :profile
 end
 
+get '/friend_profile/' do
+	puts "***************"
+	@user = current_user
+	params.inspect
+	@friend = User.find(params[:friend_id])
+	@posts = Post.all
+	@current = @friend.posts
+	@friends = @friend.friends
+	puts "%%%%%%%%%%%%%%%%%%%%"
+	erb :friend_profile
+end
+
 #------------ DELETE ---------------
 
 get '/delete' do
