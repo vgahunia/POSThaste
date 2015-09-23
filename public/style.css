@@ -105,15 +105,15 @@ label {
 }
 
 .box h2 {
-	width: 100px;
+	width: 300px;
 	margin: 10 auto;
 	padding: 0;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
+	color: rgb(240, 120, 30);
 }
 
 .box h3 {
 	color: rgb(240, 120, 30);
+	text-align: center;
 }
 
 .submit {
@@ -122,6 +122,15 @@ label {
 	padding-bottom: 4px;
 	background-color: rgb(240, 120, 30);
 	color: white;
+}
+
+.submit:hover {
+	background-color: rgb(255, 255, 255);
+	color: rgb(240, 120, 30);
+}
+
+#signup h1:hover {
+	color: black;
 }
 
 .box a {
@@ -136,15 +145,57 @@ label {
 	margin: 10px;
 }
 
+#postform {
+	text-align: center;
+	margin-bottom: 0;
+}
+
 #postform input {
 	border-color: rgb(200, 200, 200);
+}
+
+.box input {
+	text-align: center;
+}
+
+textarea {
+	border-radius: 15px;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+form p {
+	font-size: .8em;
+	padding: 0;
+	margin: 0;
 }
 
 /*============ PROFILE ===============
 ======================================
 ====================================*/
 
-#post-box {
+#post-box h4, #post-box h3 {
+	width:80px;
+	color: rgb(240, 120, 30);
+	display: inline-block;
+	margin: 0;
+}
 
+#post-box h4 {
+	text-align: right;
+}
+
+.info {
+	padding: 0;
+	margin: 0;
+}
+
+.each_post {
+	border-top: 1px solid black;
+	border-bottom: 1px dotted black;
+}
+
+.each_post span {
+	font-size: .6em
 }
 

@@ -59,6 +59,18 @@ post '/submit_user' do
 	erb :post
 end
 
+post '/edit_user' do
+	puts params.inspect
+	user_info = params[:user]
+	puts user_info
+	@user = User.find(user_info[:id])
+	@user.update(user_info)
+	# if @user
+	# 	session[:user_id] = @user.id
+	# end
+	redirect :profile
+end
+
 #------------- SIGN OUT --------------
 
 get '/sign-out' do

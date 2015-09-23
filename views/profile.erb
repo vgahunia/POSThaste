@@ -19,7 +19,8 @@
 		<div class="menu-right menu">
 			<ul>
 				<li class="top"><a href="userlist">Member List</a></li>
-				<li><a href="post">Write a Post</a></li>
+				<li class="top"><a href="post">Write a Post</a></li>
+				<li><a href="feed">Recent Feed</a></li>
 			</ul>
 		</div>
 	</div>
@@ -27,18 +28,39 @@
 	<div class="box_full">
 
 		<div class="box" id="post-box">
+			
+			<h2>Your Account Information</h2>
+			<div class="info">
+				<h4>NAME:</h4><h3> <%= @user.username %> </h3>
+			</div>
+			<div class="info">
+				<h4>ACCOUNT #:</h4><h3> <%= @user.id %> </h3>
+			</div>
+			<br>
+
 			<a href="edit">Edit your Profile</a>
-			<h1>Your Account Information</h1>
-			<h3> <%= @user.username %> </h3>
-			<h3> <%= @user.id %> </h3>
+
+			<form method="POST" action="/edit_user" id="edit">
+				<div class="feed">
+					<%= flash[:alert] %>
+				</div>  
+				<input type="text" name="[user]username" placeholder="Username">
+				<br>
+				<input type="text" name="[user]email" placeholder="email"> 
+				<br>
+				<input type="password" name="[user]password" placeholder="password"> <br>
+				<input type="hidden" name ="[user]id" value=<%= @user.id%>>
+
+				<input type="submit" class="submit"> 
+			</form>
 		</div>
 
 		<div class="box" id="post-box">
 			<h1>Your recent posts</h1>
 
 			<% @current.each do |post| %>
-			<h2>
-				<%= post.post %>
+			<h2 class="each_post">
+				<span><%= post.id %></span>...<%= post.post %>
 			</h2>
 			<br>
 			<% end %>

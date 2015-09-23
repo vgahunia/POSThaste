@@ -20,6 +20,7 @@
 		<div class="menu-right menu">
 			<ul>
 				<li class="top"><a href="profile">My Profile</a></li>
+				<li class="top"><a href="feed">Recent Feed</a></li>
 				<li><a href="userlist">Member List</a></li>
 			</ul>
 		</div>
@@ -30,15 +31,16 @@
 			Welcome, <%=@user.username if @user %>
 		</h1>
 
-		<h3>Create a new post</h3>
+		<h3>Write a new post</h3>
 		<%= flash[:alert] %>
 		<form method="POST" action="/submit_post" id="postform">
 		 	<input type="hidden" name="[post]user_id" value="<%=current_user.id %>">
 			<input class="post" type="text" name="[post]title" placeholder="Title of your post">
 			<br>
-			<textarea class="post" type="text" name="[post]post" maxlength="150" placeholder="write something" cola="4" rows="10"></textarea>
+			<textarea class="post" type="text" name="[post]post" maxlength="150" placeholder="Write something" col="4" rows="10" class="postarea"></textarea>
+						<p>Character limit: 150</p>
 			<br>
-			<input type="submit"> 
+			<input type="submit" class="submit">
 		</form>
 	</div>
 </div>
