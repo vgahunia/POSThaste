@@ -24,6 +24,9 @@ $(document).ready(function() {
   
   $(window).resize(function() {
     setHeight();
-
   });
+
+  $('#edit_profile').click(function() {
+  	$('#edit_form').toggle();
+  })
 });

@@ -30,17 +30,22 @@
 		<div class="box" id="post-box">
 			
 			<h2>Your Account Information</h2>
+			<hr class="line">
+
 			<div class="info">
 				<h4>NAME:</h4><h3> <%= @user.username %> </h3>
+			</div>
+			<div class="info">
+				<h4>EMAIL:</h4><h3> <%= @user.email %> </h3>
 			</div>
 			<div class="info">
 				<h4>ACCOUNT #:</h4><h3> <%= @user.id %> </h3>
 			</div>
 			<br>
 
-			<a href="edit">Edit your Profile</a>
+			<a id="edit_profile">Edit your Profile</a>
 
-			<form method="POST" action="/edit_user" id="edit">
+			<form method="POST" action="/edit_user" id="edit_form">
 				<div class="feed">
 					<%= flash[:alert] %>
 				</div>  
@@ -50,30 +55,37 @@
 				<br>
 				<input type="password" name="[user]password" placeholder="password"> <br>
 				<input type="hidden" name ="[user]id" value=<%= @user.id%>>
-
+				<br>
 				<input type="submit" class="submit"> 
 			</form>
 		</div>
 
 		<div class="box" id="post-box">
-			<h1>Your recent posts</h1>
+			<h2>Your Recent Posts</h2>
+			<hr class="line">
+			<br>
 
 			<% @current.each do |post| %>
 			<h2 class="each_post">
-				<span><%= post.id %></span>...<%= post.post %>
+				<span>Post#:<%= post.id %></span>...<%= post.post %>
 			</h2>
 			<br>
 			<% end %>
 		</div>
 
-		<div class="box" id="post-box">
-			<h1>Your Friends</h1>
-
-			<% @friends.each do |friend| %>
-			<h2>
-				<%= friend.username %>
-			</h2>
+		<div class="box" id="friend-box">
+			<h2>Your Friends</h2>
+			<hr class="line">
 			<br>
+
+			<% x = 1 %>
+			<% @friends.each do |friend| %>
+				<h2>
+					<span id="friend_count"><%= x %>.  </span>
+					<%= friend.username %>
+				</h2>
+				<br>
+				<% x = x + 1 %>
 			<% end %>
 		</div>
 

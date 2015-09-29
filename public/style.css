@@ -25,6 +25,10 @@ body {
 	border-radius: 50px;
 }
 
+/*============================
+------------ MENU ------------
+============================*/
+
 #nav {
 	width: 600px;
 	margin: 0 auto;
@@ -42,6 +46,7 @@ body {
 	padding-bottom: 4px;
 	list-style-type: none;
 	text-align: center;
+	font-size: .8em;
 }
 
 .menu li a {
@@ -67,8 +72,13 @@ body {
 }
 
 .top {
-	border-bottom: 2px solid white;
+	border-bottom: 1px solid white;
 }
+
+
+/* ========================
+----------- FORM ----------
+=========================== */
 
 #form {
 	width: 300px;
@@ -137,8 +147,8 @@ label {
 	text-decoration: none;
 }
 
-/*=========== POST PAGE ==============
-=====================================
+/*=====================================
+-------------- POST PAGE --------------
 =====================================*/
 
 .post {
@@ -170,15 +180,24 @@ form p {
 	margin: 0;
 }
 
-/*============ PROFILE ===============
-======================================
+/*====================================
+---------------PROFILE ---------------
 ====================================*/
+
+#post-box {
+
+}
 
 #post-box h4, #post-box h3 {
 	width:80px;
 	color: rgb(240, 120, 30);
 	display: inline-block;
 	margin: 0;
+}
+
+.line {
+	border-color: rgb(240, 120, 30);
+	width: 120px;
 }
 
 #post-box h4 {
@@ -191,11 +210,56 @@ form p {
 }
 
 .each_post {
-	border-top: 1px solid black;
-	border-bottom: 1px dotted black;
+	border-top: 1px dotted black;
+	text-align: left;
+	font-size: 1em;
 }
 
 .each_post span {
-	font-size: .6em
+	font-size: .7em
 }
 
+#edit_profile {
+	color: rgb(240, 120, 30);
+	cursor: pointer;
+	text-align: right;
+	font-size: .8em;
+}
+
+#edit_form {
+	display: none;
+}
+
+#friend_count {
+	font-size: .7em;
+	text-align: left;
+}
+
+/*=========================
+---------- FEED -----------
+========================= */
+
+.black {
+	color: black;
+	font-size: .8em;
+}
+
+
+/*================================
+---------- MEMBER LIST -----------
+================================ */
+
+.big {
+	font-size: 1.2em;
+}
+
+#member_links {
+	border-top: 2px solid rgb(240, 120, 30);
+	border-bottom: 2px solid rgb(240, 120, 30);
+	width: 200px;
+	margin: 0 auto;
+}
+
+#member_links a {
+	color: rgb(240, 120, 30);
+}

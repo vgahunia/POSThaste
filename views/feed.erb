@@ -28,16 +28,19 @@
 
 	<div class="box box_full">
 		<%= flash[:alert] %>
-		<h1>Recent Feed</h1>
+		<h2>Recent Feed</h2>
+		<hr class="line">
+		<br>
+
 		<% x = 0 %>
 		<% @posts.each do |recent_post| unless x >= 10 %>
 			<% this_id = recent_post.user_id %>
 			<% this_user = @users.find(this_id).username if !@users.find(this_id).blank? %>
-			<h2>
-				Post #:
-				<%= recent_post.id %> -
+			<h2 class="each_post">
+				
+				<span class="black">Post #:<%= recent_post.id %></span> -
 				<%= recent_post.post %>
-				<%= this_user %>
+				<span class="black">... <%= this_user %></span>
 			</h2>
 			<% x = x + 1 %>
 			<br>
