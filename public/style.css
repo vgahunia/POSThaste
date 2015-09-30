@@ -25,6 +25,16 @@ body {
 	border-radius: 50px;
 }
 
+#pic-box {
+	width: 200px;
+	margin: 20px auto;
+	padding-top: 10px;
+}
+
+#logo {
+	position: absolute;
+}
+
 /*============================
 ------------ MENU ------------
 ============================*/

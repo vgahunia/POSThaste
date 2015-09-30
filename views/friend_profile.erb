@@ -8,7 +8,7 @@
 </head>
 
 <div id="body">
-
+	<div id="pic-box"><img id="logo" src="posthaste.png"></div>
 	<div id="nav">
 		<div class="menu-left menu">
 			<ul>
@@ -28,28 +28,32 @@
 	<div class="box_full">
 
 		<div class="box" id="post-box">
-			<h1> <%= @friend.username %> Profile Page </h1>
+			<h2> <%= @friend.username %> Profile Page </h2>
+			<hr class="line">
 		</div>
 
 		<div class="box" id="post-box">
-			<h1><%= @friend.username %> recent posts</h1>
-
+			<h2><%= @friend.username %> recent posts</h2>
+			<hr class="line">
 			<% @current.each do |post| %>
-			<h2>
-				<%= post.post %>
+			<h2 class="each_post">
+				<span>Post#:<%= post.id %></span>...<%= post.post %>
 			</h2>
 			<br>
 			<% end %>
 		</div>
 
 		<div class="box" id="post-box">
-			<h1><%= @friend.username %> Friends</h1>
-
+			<h2><%= @friend.username %> Friends</h2>
+			<hr class="line">
+			<% x = 1 %>
 			<% @friends.each do |friend| %>
 			<h2>
+				<span id="friend_count"><%= x %>.  </span>
 				<%= friend.username %>
 			</h2>
 			<br>
+				<% x = x + 1 %>
 			<% end %>
 		</div>
 
